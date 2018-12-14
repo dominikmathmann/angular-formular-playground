@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ReactiveFormDemo';
+
+  constructor(private fb: FormBuilder) {}
+
+  formGroup = this.fb.group({
+    field00: ['Hello World', [Validators.required, Validators.minLength(5)]],
+    field01: [1, [Validators.min(5)]]
+  });
 }
