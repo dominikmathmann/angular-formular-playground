@@ -49,7 +49,6 @@ export class ErrorHighlightedDirective {
         this.label = child.innerText;
       }
     }
-    console.log(this.formControlName);
   }
 
   private createErrorElement(msg: string = 'Fehlerhafte Eingabe'): any {

@@ -22,4 +22,8 @@ export class AppComponent {
       field01: ''
     });
   }
+
+  range(i: number) {
+    return new Array(i);
+  }
 }
