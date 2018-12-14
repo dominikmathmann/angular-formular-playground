@@ -15,4 +15,11 @@ export class AppComponent {
     field00: ['Hello World', [Validators.required, Validators.minLength(5)]],
     field01: [1, [Validators.min(5)]]
   });
+
+  click() {
+    this.formGroup.patchValue({
+      field00: '',
+      field01: ''
+    });
+  }
 }

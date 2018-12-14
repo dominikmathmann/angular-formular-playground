@@ -10,11 +10,27 @@
   </div>
 
   <form [formGroup]="formGroup">
-    <div class="form-group">
-      <label for="eins">Feld 1</label> <input class="form-control" type="text" formControlName="field00" id="eins" />
+    <div class="row">
+      <div class="form-group col-md-6" [showLabel]="false">
+        <label for="eins" #test>Feld 1</label>
+        <input #text class="form-control" type="test" formControlName="field00" id="eins" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="zwei">Feld 2</label> <input class="form-control" type="text" formControlName="field01" id="zwei" />
+      </div>
+      <div class="form-group col-md-6" [showLabel]="false">
+        <label for="eins" #test>Feld 1</label>
+        <input #text class="form-control" type="test" formControlName="field00" id="eins" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="zwei">Feld 2</label> <input class="form-control" type="text" formControlName="field01" id="zwei" />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="zwei">Feld 2</label> <input class="form-control" type="text" formControlName="field01" id="zwei" />
-    </div>
+
+    <button type="button" class="btn btn-primary" (click)="click()">click me</button>
   </form>
+
+  {{ formGroup.value | json }}
 </div>
